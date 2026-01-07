@@ -5,7 +5,7 @@ spring:
     name: clientapi
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    ulr: jdbc:mysql://localhost:3306/client_api_db?Timezone=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/client_api_db?Timezone=true&serverTimezone=UTC
     username: ${USERNAME_DB}
     password: ${USER_PASSWORD}
   jpa:
