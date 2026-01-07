@@ -3,7 +3,6 @@ package br.com.diegopimenta.clientapi.dto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
-import org.hibernate.validator.constraints.br.CPF;
 
 import java.time.LocalDate;
 
