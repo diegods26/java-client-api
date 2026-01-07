@@ -1,0 +1,54 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Spring Boot
+spring.log
+
+# Others
+*.class
+
+# Generated
+/generated-sources/
+
+# Environment
+.env
+
+# JetBrains
+out/
+
+# Temporary files
+*.tmp
+
+# Keep Maven build artifacts out
+/*.jar
+/*.war
+
+# Local IDE files
+.vscode/
+
+# Ensure target and other build outputs are ignored
+target/
+
+# IDE specific
+*.iml
+
+# End of file
+

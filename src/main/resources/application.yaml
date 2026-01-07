@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: clientapi
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    ulr: jdbc:mysql://localhost:3306/client_api_db?Timezone=true&serverTimezone=UTC
+    username: ${USERNAME_DB}
+    password: ${USER_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  logging:
+    level:
+      org:
+        springframework:
+          web: WARN
+
