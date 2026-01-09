@@ -1,6 +1,8 @@
 package br.com.diegopimenta.clientapi.dto;
 
+import br.com.diegopimenta.clientapi.utils.FormatCpf;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
@@ -11,20 +13,16 @@ public class ClientDTO {
 
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "This field cannot be blank")
     private String name;
 
-    @NotBlank
+    @NotBlank(message = "This field cannot be blank")
     private String cpf;
+
+    @Email(message = "The email is not valid")
+    private String email;
 
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate createdDate;
-
-    public String getCpf() {
-        return cpf.replaceAll(
-                "(\\d{3})(\\d{3})(\\d{3})(\\d{2})",
-                "$1.$2.$3-$4"
-        );
-    }
 
 }

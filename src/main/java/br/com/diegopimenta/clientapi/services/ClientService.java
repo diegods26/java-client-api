@@ -4,6 +4,8 @@ import br.com.diegopimenta.clientapi.dto.ClientDTO;
 import br.com.diegopimenta.clientapi.mappers.ClientMapper;
 import br.com.diegopimenta.clientapi.models.Client;
 import br.com.diegopimenta.clientapi.repositories.ClientRepository;
+import br.com.diegopimenta.clientapi.utils.FormatCpf;
+import br.com.diegopimenta.clientapi.validation.ClientValidation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,12 +17,13 @@ public class ClientService {
 
     private final ClientRepository clientRepository;
     private final ClientMapper mapper;
+    private  final ClientValidation clientValidator;
 
-    public ClientDTO createClient(ClientDTO dto) {
+    public void createClient(ClientDTO dto) {
         Client client = mapper.dtoToEntity(dto);
+        clientValidator.clientValidation(client);
+        client.setCpf(FormatCpf.removeCpfFormat(dto.getCpf()));
         clientRepository.save(client);
-
-        return dto;
     }
 
     public List<ClientDTO> getClients() {

@@ -17,6 +17,8 @@ public class Client {
     private String name;
     @Column(nullable = false, unique = true, length = 11)
     private String cpf;
+    @Column(nullable = false, unique = true, length = 100)
+    private String email;
     @Column(name = "create_date")
     private LocalDate createdDate;
 }

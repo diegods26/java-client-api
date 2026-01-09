@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1/clients")
 @RequiredArgsConstructor
@@ -17,10 +18,10 @@ public class ClientController {
 
     @PostMapping("/add-client")
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<ClientDTO> createClient(@RequestBody @Valid ClientDTO request) {
-        var client = service.createClient(request);
+    public ResponseEntity<?> createClient(@RequestBody @Valid ClientDTO request) {
+        service.createClient(request);
 
-        return ResponseEntity.ok().body(client);
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping
